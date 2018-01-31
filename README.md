@@ -5,7 +5,7 @@
 * [Frederik](https://github.com/hamistolen)
 
 ## Vision:
-**Comming soon*** ***maybe***
+**Comming soon** ***maybe***
 
 ## Credit:
 * [Template](https://html5up.net/phantom)
