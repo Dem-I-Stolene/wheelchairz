@@ -3,3 +3,10 @@
 ## Group:
 * [Oliver](https://github.com/Voss19)
 * [Frederik](https://github.com/hamistolen)
+
+## Vision:
+**Comming soon** *maybe***
+
+## Credit:
+* [Template](https://html5up.net/phantom)
+* [Codeigniter](https://codeigniter.com/)
