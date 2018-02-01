@@ -29,7 +29,6 @@ class Page_model extends CI_Model
 		if ($recieved_data) {
 			$recieved_data['page_title'] = $page_title;
 			$this->parser->parse($page, $recieved_data);
-			
 			#echo "le"; exit;
 		} else {
 			$this->load->view($page);
