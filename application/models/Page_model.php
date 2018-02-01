@@ -29,7 +29,7 @@ class Page_model extends CI_Model
 		if ($recieved_data) {
 			$recieved_data['page_title'] = $page_title;
 			$this->parser->parse($page, $recieved_data);
-			#echo "le"; exit;
+			#echo "<pre>";echo print_r($recieved_data);echo "</pre>"; exit;
 		} else {
 			$this->load->view($page);
 		}
