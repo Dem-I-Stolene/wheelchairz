@@ -5,6 +5,10 @@ class Page_model extends CI_Model
 {
 	public function load_page($page, $recieved_data = null, $slug = null)
 	{
+		# Get database informartion
+
+		$page_title = 'DemIstolene';
+
 		if ($slug) {
 			$this->db->where('p_slug', $slug);
 		} else {
@@ -14,9 +18,8 @@ class Page_model extends CI_Model
 		$sqlQuery = $this->db->get('pages');
 
 		$data = $sqlQuery->row_array();
-		$data['page_title'] = 'plz work';
+		$data['page_title'] = $page_title;
 		$data['nav'] = $this->db->get('pages')->result_array();
-
 
 		# Load page
 
@@ -24,9 +27,10 @@ class Page_model extends CI_Model
 		$this->parser->parse('template/nav', $data);
 
 		if ($recieved_data) {
+			$recieved_data['page_title'] = $page_title;
 			$this->parser->parse($page, $recieved_data);
 			
-			#echo "le";exit;
+			#echo "le"; exit;
 		} else {
 			$this->load->view($page);
 		}
@@ -36,3 +40,36 @@ class Page_model extends CI_Model
 		
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

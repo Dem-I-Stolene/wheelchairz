@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>DemIstolene / {p_title}</title>
+		<title>{page_title} / {p_title}</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="<?php echo base_url('assets/css/main.css') ?>" />
@@ -18,7 +18,7 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="<?php echo base_url('assets/images/logo.svg'); ?>" alt="" /></span><span class="title">Berlin By Wheelchair</span>
+									<span class="symbol"><img src="<?php echo base_url('assets/images/logo.svg'); ?>" alt="" /></span><span class="title">{page_title}</span>
 								</a>
 
 							<!-- Nav -->

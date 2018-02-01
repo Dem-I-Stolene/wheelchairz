@@ -53,7 +53,7 @@ $route['default_controller'] = 'page';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-
+$route['test'] = 'page/test';
 
 $route['(:any)'] = 'page/index/$1';
 
