@@ -4,8 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Page extends CI_Controller {
 	
 
-	public function index()
+	public function index($slug = null)
 	{
-		$this->load->view('view');
+		$data['test'] = '1234';
+		$this->Page_model->load_page('view', $data, $slug);
 	}
 }
