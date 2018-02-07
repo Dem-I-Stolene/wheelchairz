@@ -23,7 +23,16 @@ class Page_model extends CI_Model
 
 		# Load page
 
+		$_SESSION['username'] = 'test';
+
 		$this->parser->parse('template/head', $data);
+
+		if (isset($_SESSION['username'])) {
+			$data['username'] = $_SESSION['username'];
+			$this->parser->parse('admin/control_panel', $data);
+		}
+
+		$this->parser->parse('template/start', $data);
 		$this->parser->parse('template/nav', $data);
 
 		if ($recieved_data) {
