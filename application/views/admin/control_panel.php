@@ -1,12 +1,14 @@
 <div>
 	<p>Hej {username}!</p>
 	<ul>
-		{admin_page}
-
-			<li>
-				<a href="<?php echo base_url('admin/{p_slug}'); ?>">{p_title}</a>
-			</li>
-
-		{/admin_page}
+		<?php
+			foreach($admin_page as $adminkey => $adminvalue){
+		?>
+				<li>
+					<a href="<?php echo base_url('admin/'.$adminvalue['p_slug']); ?>"><?php echo $adminvalue['p_title']; ?></a>
+				</li>
+		<?php
+			}
+		?>
 	</ul>
 </div>

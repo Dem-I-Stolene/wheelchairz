@@ -19,13 +19,35 @@ class Page_model extends CI_Model
 
 		$data = $sqlQuery->row_array();
 		$data['page_title'] = $page_title;
+
+		$this->db->where('p_parent', null);
+		$this->db->where('p_admin', 0);
 		$data['nav'] = $this->db->get('pages')->result_array();
+
+		foreach ($data['nav'] as $key => $value) {
+			$this->db->where('p_parent', $value['p_id']);
+			$this->db->where('p_admin', 0);
+			$sqlQuery = $this->db->get('pages');
+			if ($sqlQuery->num_rows() > 0) {
+				$data['nav'][$key]['subnav'] = $sqlQuery->result_array();
+			}
+		}
+
+		foreach ($data['nav'] as $key => $value) {
+			$this->db->where('p_admin', 1);
+			$sqlQuery = $this->db->get('pages');
+			if ($sqlQuery->num_rows() > 0) {
+				$data['admin_page'] = $sqlQuery->result_array();
+			}
+		}
 
 		# Load page
 
 		$_SESSION['username'] = 'test';
 
 		$this->parser->parse('template/head', $data);
+
+		#echo "<pre>"; print_r($data); echo "</pre>"; exit;
 
 		if (isset($_SESSION['username'])) {
 			$data['username'] = $_SESSION['username'];
@@ -38,7 +60,6 @@ class Page_model extends CI_Model
 		if ($recieved_data) {
 			$recieved_data['page_title'] = $page_title;
 			$this->parser->parse($page, $recieved_data);
-			#echo "<pre>";echo print_r($recieved_data);echo "</pre>"; exit;
 		} else {
 			$this->load->view($page);
 		}
