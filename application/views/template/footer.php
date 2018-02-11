@@ -3,18 +3,21 @@
 						<div class="inner">
 							<section>
 								<h2>Contact</h2>
-								<form method="post" action="#">
+								<form method="post" name="footer_form" id="footer_form">
 									<div class="field half first">
 										<input type="text" name="name" id="name" placeholder="Your Name" />
 									</div>
 									<div class="field half">
 										<input type="email" name="email" id="email" placeholder="Your Email" />
 									</div>
+									<div class="field half">
+										<input type="text" name="subject" id="subject" placeholder="Your subject" />
+									</div>
 									<div class="field">
 										<textarea name="message" id="message" placeholder="Write your message here..."></textarea>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send" class="special" /></li>
+										<li><input type="submit" value="Send" class="special" name="footer_form_send" id="footer_form_send" /></li>
 									</ul>
 								</form>
 							</section>

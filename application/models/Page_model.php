@@ -7,6 +7,15 @@ class Page_model extends CI_Model
 	{
 		# Get database informartion
 
+		if ($this->input->post('footer_form_send')) {
+			$name = $this->input->post('namr');
+			$email = $this->input->post('email');
+			$subject = $this->input->post('subject');
+			$message = $this->input->post('message');
+
+			$this->Mail_model->form_mail($name, $email, $subject, $message);
+		}
+
 		$page_title = 'DemIstolene';
 
 		if ($slug) {

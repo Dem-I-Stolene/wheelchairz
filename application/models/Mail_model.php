@@ -8,7 +8,7 @@ class Mail_model extends CI_Model
 		// Your info
 
 		$yourMail = "your@email.com";
-		$yourName = "Your name";
+		$yourName = "DemIstolene";
 
 		$autoResponseSubject = "Your mail was recieved";
 		$autoResponseMessage = "
@@ -19,7 +19,7 @@ class Mail_model extends CI_Model
 									Your subject: {$userSubject}
 									\n
 									Your message: {$userMessage}
-								"
+								";
 
 		// To your email
 
