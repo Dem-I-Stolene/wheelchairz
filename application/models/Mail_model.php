@@ -13,18 +13,20 @@ class Mail_model extends CI_Model
 
 		// Your info
 
-		$yourMail = "your@email.com";
+		$yourMail = "demistolene@gmail.com";
 		$yourName = "DemIstolene";
 
 		$autoResponseSubject = "Your mail was recieved";
 		$autoResponseMessage = "
-									<p style='color: grey;'>This is an automatic email, please do not respond to it.</p>
-									<br> <br>
-									Hello {$userName}, we have recieved your message
-									<br>
-									<p style='font-weight: 900;'>Your subject: {$userSubject}</p>
-									<br>
-									<p style='font-weight: 900;'>Your message: {$userMessage}</p>
+									<h2>Hello {$userName}, we have recieved your message</h2>
+									
+									<p style='font-weight: 900;'>Your subject: </p>
+									<p style='padding-bottom: 5px;'>{$userSubject}</p>
+
+									<p style='font-weight: 900;'>Your message: </p>
+									<p>{$userMessage}</p>
+
+									<p style='color: grey; background-color: lightgrey; padding: 20px; text-align: center;'>This is an automatic email, please do not respond to it.</p>
 								";
 
 		// To your email
@@ -32,17 +34,17 @@ class Mail_model extends CI_Model
 		$this->email->from($userEmail, $userName);
 		$this->email->to($yourMail);
 
-		$this->email->subject($userSubject);
+		$this->email->subject("Form: ".$userSubject);
 		$this->email->message($userMessage);
 
 		$this->email->send();
 
 		// To the users email
 
-		$this->email->from($yourMail, $yourName);
+		$this->email->from($yourMail, $yourName." auto response to: ".$userSubject);
 		$this->email->to($userEmail);
 
-		$this->email->subject($autoResponseSubject);
+		$this->email->subject($yourName." ".$autoResponseSubject);
 		$this->email->message($autoResponseMessage);
 
 		$this->email->send();
