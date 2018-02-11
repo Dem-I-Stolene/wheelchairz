@@ -5,6 +5,12 @@ class Mail_model extends CI_Model
 {
 	public function form_mail($userName, $userEmail, $userSubject, $userMessage)
 	{
+		// Config
+		
+		$config['mailtype'] = 'html';
+
+		$this->email->initialize($config);
+
 		// Your info
 
 		$yourMail = "your@email.com";
@@ -12,13 +18,13 @@ class Mail_model extends CI_Model
 
 		$autoResponseSubject = "Your mail was recieved";
 		$autoResponseMessage = "
-									This is an automatic email, please do not respond to it.
-									\n \n
+									<p style='color: grey;'>This is an automatic email, please do not respond to it.</p>
+									<br> <br>
 									Hello {$userName}, we have recieved your message
-									\n
-									Your subject: {$userSubject}
-									\n
-									Your message: {$userMessage}
+									<br>
+									<p style='font-weight: 900;'>Your subject: {$userSubject}</p>
+									<br>
+									<p style='font-weight: 900;'>Your message: {$userMessage}</p>
 								";
 
 		// To your email
