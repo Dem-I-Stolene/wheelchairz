@@ -1,8 +1,7 @@
 
 
 
-<!-- Main -->
-<div id="main">
+
 	<div class="inner">
 		<header>
 			<h1>{p_title}<br />
@@ -28,7 +27,6 @@
 		
 		</section>
 	</div>
-</div>
 
 
 
