@@ -55,6 +55,8 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['test'] = 'page/test';
 
+$route['admin/create'] = 'admin/create';
+
 $route['(:any)'] = 'page/index/$1';
 
 

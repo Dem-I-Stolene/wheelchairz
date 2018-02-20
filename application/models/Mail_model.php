@@ -29,6 +29,8 @@ class Mail_model extends CI_Model
 									<p style='color: grey; background-color: lightgrey; padding: 20px; text-align: center;'>This is an automatic email, please do not respond to it.</p>
 								";
 
+		$userName = "Question from: {$userName}";
+
 		// To your email
 
 		$this->email->from($userEmail, $userName);
@@ -50,3 +52,41 @@ class Mail_model extends CI_Model
 		$this->email->send();
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
