@@ -13,11 +13,17 @@ class Page extends CI_Controller {
 		$this->db->where('p_admin', 0);
 		$this->db->where('p_parent', null);
 		$data['pages'] = $this->db->get('pages')->result_array();
-		$this->Page_model->load_page('view', $data, $slug);
+		$this->Page_model->load_page('front', $data, $slug);
 	}
 
 	public function test()
 	{
 		$this->Page_model->load_page('welcome_message');
+	}
+
+	public function subpage($slug)
+	{
+		echo "hej";
+		echo $slug;
 	}
 }
