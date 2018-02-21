@@ -57,6 +57,8 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['admin/create'] = 'admin/create';
 
+$route['page/(:num)/subpage/(:num)'] = 'page/subsubpage/$2';
+$route['page/(:num)/subpage/(:num)/gallery/$3'] = 'page/gallery/$3';
 $route['page/(:num)'] = 'page/subpage/$1';
 
 $route[''] = 'page/index';

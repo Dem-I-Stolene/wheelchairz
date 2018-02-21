@@ -33,4 +33,26 @@ class Page extends CI_Controller {
 		$data['pages'] = $this->db->get('pages')->result_array();
 		$this->Page_model->load_page('subpage', $data, null, $id);
 	}
+
+	public function subsubpage($id)
+	{
+		if ($id) {
+			$this->db->where('p_id', $id);
+		}
+		$this->db->where('p_admin', 0);
+		$sqlQuery = $this->db->get('pages');
+		$data = $sqlQuery->row_array();
+		$this->Page_model->load_page('subsubpage', $data, null, $id);
+	}
+
+	public function gallery($id)
+	{
+		if ($id) {
+			$this->db->where('p_gallery', $id);
+		}
+		$this->db->where('p_admin', 0);
+		$sqlQuery = $this->db->get('pages');
+		$data = $sqlQuery->row_array();
+		$this->Page_model->load_page('gallery', $data, null, $id);
+	}
 }
