@@ -16,21 +16,21 @@ class Page extends CI_Controller {
 		$this->Page_model->load_page('front', $data, $slug);
 	}
 
-	public function test()
-	{
-		$this->Page_model->load_page('welcome_message');
-	}
+	// public function test()
+	// {
+	// 	$this->Page_model->load_page('welcome_message');
+	// }
 
-	public function subpage($slug)
+	public function subpage($id)
 	{
-		if ($slug) {
-			$this->db->where('p_slug', $slug);
+		if ($id) {
+			$this->db->where('p_id', $id);
 		}
 		$sqlQuery = $this->db->get('pages');
 		$data = $sqlQuery->row_array();
 		$this->db->where('p_admin', 0);
-		$this->db->where('p_parent', null);
+		$this->db->where('p_parent', $id);
 		$data['pages'] = $this->db->get('pages')->result_array();
-		$this->Page_model->load_page('subpage');
+		$this->Page_model->load_page('subpage', $data, null, $id);
 	}
 }

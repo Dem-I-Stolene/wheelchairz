@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script acces allowed');
 
 class Page_model extends CI_Model
 {
-	public function load_page($page, $recieved_data = null, $slug = null)
+	public function load_page($page, $recieved_data = null, $slug = null, $id = null)
 	{
 		# Get database informartion
 
@@ -20,6 +20,8 @@ class Page_model extends CI_Model
 
 		if ($slug) {
 			$this->db->where('p_slug', $slug);
+		} else if ($id) {
+			$this->db->where('p_id', $id);
 		} else {
 			$this->db->where('p_frontpage', 1);
 		}
