@@ -14,7 +14,7 @@
 						foreach($value['subnav'] as $subkey => $subvalue){
 					?>
 						<li>
-							<a style="color: red;" href="<?php echo base_url('subpage/'.$subvalue['p_id']); ?>">
+							<a style="color: red;" href="<?php echo base_url('page/'.$value['p_id'].'/subpage/'.$subvalue['p_id']); ?>">
 								
 								<?php echo $subvalue['p_title']; ?>
 							

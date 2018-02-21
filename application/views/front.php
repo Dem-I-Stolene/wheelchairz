@@ -14,7 +14,7 @@
 			{pages}
 				<article class="style1">
 					<span class="image">
-						<img src="<?php echo base_url('assets/images/pic01.jpg'); ?>" alt="" />
+						<img src="<?php echo base_url('assets/images/pic09.jpg'); ?>" alt="" />
 					</span>
 					<a href="<?php echo base_url('{p_slug}'); ?>">
 						<h2>{p_title}</h2>
