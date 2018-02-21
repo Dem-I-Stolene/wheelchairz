@@ -5,7 +5,7 @@
 			<?php
 				foreach($nav as $key => $value){
 			?>
-				<li><a href="<?php echo base_url($value['p_slug']); ?>"><?php echo $value['p_title']; ?></a></li>
+				<li><a href="<?php echo base_url('page/'.$value['p_id']); ?>"><?php echo $value['p_title']; ?></a></li>
 				<?php 
 					if(isset($value['subnav'])){
 				?>
@@ -14,7 +14,7 @@
 						foreach($value['subnav'] as $subkey => $subvalue){
 					?>
 						<li>
-							<a style="color: red;" href="<?php echo base_url($subvalue['p_slug']); ?>">
+							<a style="color: red;" href="<?php echo base_url('subpage/'.$subvalue['p_id']); ?>">
 								
 								<?php echo $subvalue['p_title']; ?>
 							
