@@ -14,8 +14,8 @@
 						foreach($value['subnav'] as $subkey => $subvalue){
 							if ($subvalue['p_gallery'] > 0) {
 					?>
-								<li>
-									<a style="color: red;" href="<?php echo base_url('page/'.$value['p_id'].'/subpage/'.$subvalue['p_id'].'/gallery/'.$subvalue['p_gallery']); ?>">
+								<li  style="list-style-type: none;">
+									<a style=" color: white;" href="<?php echo base_url('page/'.$value['p_id'].'/gallery/'.$subvalue['p_gallery']); ?>">
 										
 										<?php echo $subvalue['p_title']; ?>
 									
@@ -24,8 +24,8 @@
 					<?php
 							} else {
 					?>
-								<li>
-									<a style="color: red;" href="<?php echo base_url('page/'.$value['p_id'].'/subpage/'.$subvalue['p_id']); ?>">
+								<li  style="list-style-type: none;">
+									<a style=" color: white;" href="<?php echo base_url('/subpage/'.$subvalue['p_id']); ?>">
 										
 										<?php echo $subvalue['p_title']; ?>
 									

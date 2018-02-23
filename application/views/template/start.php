@@ -6,8 +6,8 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="<?php echo base_url('assets/images/logo.svg'); ?>" alt="" /></span><span class="title">{page_title}</span>
+								<a href="<?php echo base_url(); ?>" class="logo">
+									<span class="title"><img style="width: 160px; height: auto;" src="<?php echo base_url('assets/images/logo-stor.png'); ?>" alt="" /></span>
 								</a>
 
 							<!-- Nav -->

@@ -11,6 +11,7 @@ class Page extends CI_Controller {
 		$sqlQuery = $this->db->get('pages');
 		$data = $sqlQuery->row_array();
 		$this->db->where('p_admin', 0);
+		$this->db->where('p_frontpage', 0);
 		$this->db->where('p_parent', null);
 		$data['pages'] = $this->db->get('pages')->result_array();
 		$this->Page_model->load_page('front', $data, $slug);
@@ -29,8 +30,11 @@ class Page extends CI_Controller {
 		$sqlQuery = $this->db->get('pages');
 		$data = $sqlQuery->row_array();
 		$this->db->where('p_admin', 0);
+		$this->db->where('p_frontpage', 0);
 		$this->db->where('p_parent', $id);
 		$data['pages'] = $this->db->get('pages')->result_array();
+		$this->db->where('p_id', $id);
+		$data['name'] = $this->db->get('pages')->result_array();
 		$this->Page_model->load_page('subpage', $data, null, $id);
 	}
 
@@ -45,7 +49,7 @@ class Page extends CI_Controller {
 		$this->Page_model->load_page('subsubpage', $data, null, $id);
 	}
 
-	public function gallery($id)
+	public function gallery($page, $id)
 	{
 		if ($id) {
 			$this->db->where('p_gallery', $id);
@@ -53,6 +57,10 @@ class Page extends CI_Controller {
 		$this->db->where('p_admin', 0);
 		$sqlQuery = $this->db->get('pages');
 		$data = $sqlQuery->row_array();
-		$this->Page_model->load_page('gallery', $data, null, $id);
+		$this->db->where('i_g_id', $id);
+		$data['images'] = $this->db->get('images')->result_array();
+		$this->db->where('g_id', $id);
+		$data['gallery'] = $this->db->get('galleries')->result_array();
+		$this->Page_model->load_page('gallery', $data, null, $page);
 	}
 }

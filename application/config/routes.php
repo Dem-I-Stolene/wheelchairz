@@ -55,10 +55,12 @@ $route['translate_uri_dashes'] = FALSE;
 
 // $route['test'] = 'page/test';
 
+$route['admin/gallery'] = 'admin/gcreate';
 $route['admin/create'] = 'admin/create';
+$route['admin/upload'] = 'admin/upload';
 
-$route['page/(:num)/subpage/(:num)/gallery/(:num)'] = 'page/gallery/$3';
-$route['page/(:num)/subpage/(:num)'] = 'page/subsubpage/$2';
+$route['page/(:num)/gallery/(:num)'] = 'page/gallery/$1/$2';
+$route['subpage/(:num)'] = 'page/subsubpage/$1';
 $route['page/(:num)'] = 'page/subpage/$1';
 
 $route[''] = 'page/index';

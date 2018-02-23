@@ -33,6 +33,7 @@ class Page_model extends CI_Model
 
 		$this->db->where('p_parent', null);
 		$this->db->where('p_admin', 0);
+		$this->db->where('p_frontpage', 0);
 		$data['nav'] = $this->db->get('pages')->result_array();
 
 		foreach ($data['nav'] as $key => $value) {
@@ -60,10 +61,10 @@ class Page_model extends CI_Model
 
 		#echo "<pre>"; print_r($data); echo "</pre>"; exit;
 
-		if (isset($_SESSION['username'])) {
-			$data['username'] = $_SESSION['username'];
-			$this->parser->parse('admin/control_panel', $data);
-		}
+		// if (isset($_SESSION['username'])) {
+		// 	$data['username'] = $_SESSION['username'];
+		// 	$this->parser->parse('admin/control_panel', $data);
+		// }
 
 		$this->parser->parse('template/start', $data);
 		$this->parser->parse('template/nav', $data);
