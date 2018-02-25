@@ -11,7 +11,7 @@
 	<section class="tiles">
 		<?php 
 		foreach ($pages as $subkey => $subvalue) { 
-			if ($subvalue['p_gallery'] == 1) {
+			if ($subvalue['p_gallery'] > 0) {
 			?>
 			<article class="style1" onmouseover="slicer('text<?php echo $subvalue['p_id']; ?>')">
 				<span class="image">
@@ -44,6 +44,7 @@
 	} ?>
 	
 	</section>
+	<br>
 	<span class="image main"><img src="<?php
 	foreach($name as $ikey => $ivalue) {
 		$p_image = $ivalue['p_image'];
