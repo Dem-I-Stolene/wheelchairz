@@ -5,7 +5,6 @@ class Page_model extends CI_Model
 {
 	public function load_page($page, $recieved_data = null, $slug = null, $id = null)
 	{
-		# Get database informartion
 
 		if ($this->input->post('footer_form_send')) {
 			$name = $this->input->post('name');
@@ -16,6 +15,8 @@ class Page_model extends CI_Model
 			$this->Mail_model->form_mail($name, $email, $subject, $message);
 		}
 
+		# Get database informartion
+		
 		$page_title = 'DemIstolene';
 
 		if ($slug) {
